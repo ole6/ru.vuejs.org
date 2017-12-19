@@ -70,6 +70,9 @@
 
           ga('send', 'pageview');
         </script>
+
+        <!-- vimeo analytics -->
+        <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
     </head>
     <body class="docs">
         <div id="mobile-bar" >
@@ -906,7 +909,7 @@ var app3 = new Vue({
 
 <p>Попробуйте ввести в консоли <code>app3.seen = false</code>. Сообщение должно пропасть.</p>
 <p>Этот пример демонстрирует возможность связывать данные не только с текстом и атрибутами, но также и со <strong>структурой</strong> DOM. Более того, Vue также имеет мощную систему анимации, которая автоматически применяет <a href="transitions.html">transition-эффекты</a>, когда элементы добавляются/обновляются/удаляются.</p>
-<p>Есть несколько других директив, каждая из которых имеет свой особый функционал. Например, директива <code>v-for</code> может быть использована для отображения списков, используя данные из массива:</p>
+<p>Есть несколько других директив, каждая из которых имеет свою особую функциональность. Например, директива <code>v-for</code> может быть использована для отображения списков, используя данные из массива:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span>&gt;</span></span><br><span class="line">      &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> app4 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app-4'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    todos: [</span><br><span class="line">      &#123; <span class="attr">text</span>: <span class="string">'Посадить дерево'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">text</span>: <span class="string">'Построить дом'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">text</span>: <span class="string">'Вырастить сына'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
