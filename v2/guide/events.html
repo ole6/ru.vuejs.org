@@ -264,16 +264,18 @@
         </ul>
         <div class="list">
             <div class="main-sponsor">
-                <span>Платиновые спонсоры</span><br>
-                <a href="https://stdlib.com" target="_blank" class="logo">
+                <span>Платиновые спонсоры</span>
+                <div>
+                  <a href="https://stdlib.com" target="_blank" class="logo">
                     <img src="/images/stdlib.png">
-                </a>
-                <a href="http://tooltwist.com/" target="_blank" class="logo">
-                  <img src="/images/tooltwist.png" style="margin-top:-5px">
-                </a>
-                <a href="https://www.infinitynewtab.com/donate/index.html" target="_blank" class="logo">
-                  <img src="/images/infinitynewtab.png">
-                </a>
+                  </a>
+                  <a href="http://tooltwist.com/" target="_blank" class="logo">
+                    <img src="/images/tooltwist.png">
+                  </a>
+                  <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+                    <img src="/images/vueschool.png">
+                  </a>
+                </div>
             </div>
             <a class="become-backer" href="/support-vuejs">
                 Поддержите Vue.js
@@ -932,6 +934,13 @@ new Vue({
 </blockquote>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Событие click сработает только 1 раз --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.once</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>В отличие от остальных модификаторов, которые поддерживают исключительно нативные DOM-события, модификатор <code>.once</code> можно использовать и в <a href="components.html#Использование-v-on-с-пользовательскими-событиями">пользовательских событиях компонентов</a>. Если вы ещё не читали о компонентах, не беспокойтесь об этом сейчас.</p>
+<blockquote>
+<p>Добавлено в версии 2.3.0+</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- событие scroll не отменяет стандартного поведения прокрутки --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:scroll.passive</span>=<span class="string">"onScroll"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>В дополнение к этим модификаторам Vue предоставляет модификатор <code>.passive</code> для улучшения производительности, особенно на мобильных устройствах. Например, при выполнении прокрутки, браузер станет прокручивать страницу только после завершения процесса, потому что браузер не знает, будет ли вызываться <code>event.preventDefault()</code> внутри обработчика. Модификатор <code>.passive</code> может быть использован, чтобы сообщить браузеру, что это событие не будет отменять поведения для события по умолчанию.</p>
+<p class="tip">Не используйте вместе <code>.passive</code> и <code>.prevent</code>. Пассивный обработчик не может предотвращать событие по умолчанию.</p>
+
 <h2 id="Модификаторы-клавиш"><a href="#Модификаторы-клавиш" class="headerlink" title="Модификаторы клавиш"></a>Модификаторы клавиш</h2><p>При обработке событий от клавиатуры нас часто интересуют распространённые коды клавиш. Vue позволяет добавить модификаторы клавиш при использовании <code>v-on</code> для отслеживания событий от клавиатуры:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- вызвать `vm.submit()` только если `keyCode` равен 13 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-on:keyup.13</span>=<span class="string">"submit"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Удерживать все коды клавиш в памяти — неблагодарное дело, поэтому Vue предоставляет псевдонимы для наиболее часто используемых из них:</p>

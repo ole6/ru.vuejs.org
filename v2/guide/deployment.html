@@ -264,16 +264,18 @@
         </ul>
         <div class="list">
             <div class="main-sponsor">
-                <span>Платиновые спонсоры</span><br>
-                <a href="https://stdlib.com" target="_blank" class="logo">
+                <span>Платиновые спонсоры</span>
+                <div>
+                  <a href="https://stdlib.com" target="_blank" class="logo">
                     <img src="/images/stdlib.png">
-                </a>
-                <a href="http://tooltwist.com/" target="_blank" class="logo">
-                  <img src="/images/tooltwist.png" style="margin-top:-5px">
-                </a>
-                <a href="https://www.infinitynewtab.com/donate/index.html" target="_blank" class="logo">
-                  <img src="/images/infinitynewtab.png">
-                </a>
+                  </a>
+                  <a href="http://tooltwist.com/" target="_blank" class="logo">
+                    <img src="/images/tooltwist.png">
+                  </a>
+                  <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+                    <img src="/images/vueschool.png">
+                  </a>
+                </div>
             </div>
             <a class="become-backer" href="/support-vuejs">
                 Поддержите Vue.js
@@ -859,7 +861,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">NODE_ENV=production browserify -g envify -e main.js | uglifyjs -c -m &gt; build.js</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Или используйте <a href="https://github.com/hughsk/envify" target="_blank" rel="noopener">envify</a> вместе с Gulp:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Используйте пользовательский модуль envify для указания переменных окружения</span></span><br><span class="line"><span class="keyword">var</span> envify = <span class="built_in">require</span>(<span class="string">'envify/custom'</span>)</span><br><span class="line"></span><br><span class="line">browserify(browserifyOptions)</span><br><span class="line">  .transform(vueify),</span><br><span class="line">  .transform(</span><br><span class="line">    <span class="comment">// Порядок необходим для обработки файлов node_modules</span></span><br><span class="line">    &#123; <span class="attr">global</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    envify(&#123; <span class="attr">NODE_ENV</span>: <span class="string">'production'</span> &#125;)</span><br><span class="line">  )</span><br><span class="line">  .bundle()</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Используйте пользовательский модуль envify для указания переменных окружения</span></span><br><span class="line"><span class="keyword">var</span> envify = <span class="built_in">require</span>(<span class="string">'envify/custom'</span>)</span><br><span class="line"></span><br><span class="line">browserify(browserifyOptions)</span><br><span class="line">  .transform(vueify)</span><br><span class="line">  .transform(</span><br><span class="line">    <span class="comment">// Порядок необходим для обработки файлов node_modules</span></span><br><span class="line">    &#123; <span class="attr">global</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    envify(&#123; <span class="attr">NODE_ENV</span>: <span class="string">'production'</span> &#125;)</span><br><span class="line">  )</span><br><span class="line">  .bundle()</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="Rollup"><a href="#Rollup" class="headerlink" title="Rollup"></a>Rollup</h4><p>Используйте <a href="https://github.com/rollup/rollup-plugin-replace" target="_blank" rel="noopener">rollup-plugin-replace</a>:</p>

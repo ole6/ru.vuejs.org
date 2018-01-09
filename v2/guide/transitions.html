@@ -264,16 +264,18 @@
         </ul>
         <div class="list">
             <div class="main-sponsor">
-                <span>Платиновые спонсоры</span><br>
-                <a href="https://stdlib.com" target="_blank" class="logo">
+                <span>Платиновые спонсоры</span>
+                <div>
+                  <a href="https://stdlib.com" target="_blank" class="logo">
                     <img src="/images/stdlib.png">
-                </a>
-                <a href="http://tooltwist.com/" target="_blank" class="logo">
-                  <img src="/images/tooltwist.png" style="margin-top:-5px">
-                </a>
-                <a href="https://www.infinitynewtab.com/donate/index.html" target="_blank" class="logo">
-                  <img src="/images/infinitynewtab.png">
-                </a>
+                  </a>
+                  <a href="http://tooltwist.com/" target="_blank" class="logo">
+                    <img src="/images/tooltwist.png">
+                  </a>
+                  <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+                    <img src="/images/vueschool.png">
+                  </a>
+                </div>
             </div>
             <a class="become-backer" href="/support-vuejs">
                 Поддержите Vue.js
@@ -865,7 +867,7 @@
 <p>Рассмотрим в действии простой пример:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"show = !show"</span>&gt;</span></span><br><span class="line">    Переключить</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"fade"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">"show"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#demo'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    show: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.fade-enter-active</span>, <span class="selector-class">.fade-leave-active</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: opacity .<span class="number">5s</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fade-enter</span>, <span class="selector-class">.fade-leave-to</span> <span class="comment">/* .fade-leave-active до версии 2.1.8 */</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.fade-enter-active</span>, <span class="selector-class">.fade-leave-active</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: opacity .<span class="number">5s</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fade-enter</span>, <span class="selector-class">.fade-leave-to</span> <span class="comment">/* .fade-leave-active до версии 2.1.8 */</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <div id="demo">
   <button v-on:click="show = !show">
@@ -885,10 +887,10 @@ new Vue({
 </script>
 <style>
 .demo-transition-enter-active, .demo-transition-leave-active {
-  transition: opacity .5s
+  transition: opacity .5s;
 }
 .demo-transition-enter, .demo-transition-leave-to {
-  opacity: 0
+  opacity: 0;
 }
 </style>
 
@@ -1269,10 +1271,10 @@ new Vue({
 </script>
 <style>
 .with-mode-fade-enter-active, .with-mode-fade-leave-active {
-  transition: opacity .5s
+  transition: opacity .5s;
 }
 .with-mode-fade-enter, .with-mode-fade-leave-active {
-  opacity: 0
+  opacity: 0;
 }
 </style>
 
