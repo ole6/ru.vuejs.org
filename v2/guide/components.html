@@ -144,11 +144,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">Команда</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">Поддержать Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">Поддержать Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Единоразовые пожертвования</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">Повторяющиеся взносы</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Повторяющиеся взносы</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Магазин футболок</a></li>
     </ul></li>
   </ul>
@@ -237,11 +237,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">Команда</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">Поддержать Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">Поддержать Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Единоразовые пожертвования</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">Повторяющиеся взносы</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Повторяющиеся взносы</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Магазин футболок</a></li>
     </ul></li>
   </ul>
@@ -274,6 +274,9 @@
                   </a>
                   <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
                     <img src="/images/vueschool.png">
+                  </a>
+                  <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
+                    <img src="/images/datacamp.png">
                   </a>
                 </div>
             </div>
@@ -849,7 +852,8 @@
     
       <h1>Компоненты</h1>
     
-    <h2 id="Что-такое-компоненты"><a href="#Что-такое-компоненты" class="headerlink" title="Что такое компоненты?"></a>Что такое компоненты?</h2><p>Компоненты — это одна из самых мощных возможностей Vue. Компоненты расширяют базовые HTML-элементы, позволяя инкапсулировать повторно используемый код. Не вдаваясь в подробности, можно сказать, что компоненты — это пользовательские элементы, к которым компилятор Vue привязывает определённое поведение. В некоторых случаях компоненты также можно задать с помощью нативных элементов, расширенных специальным атрибутом <code>is</code>.</p>
+    
+      <h2 id="Что-такое-компоненты"><a href="#Что-такое-компоненты" class="headerlink" title="Что такое компоненты?"></a>Что такое компоненты?</h2><p>Компоненты — это одна из самых мощных возможностей Vue. Компоненты расширяют базовые HTML-элементы, позволяя инкапсулировать повторно используемый код. Не вдаваясь в подробности, можно сказать, что компоненты — это пользовательские элементы, к которым компилятор Vue привязывает определённое поведение. В некоторых случаях компоненты также можно задать с помощью нативных элементов, расширенных специальным атрибутом <code>is</code>.</p>
 <p>Все компоненты Vue также являются экземплярами Vue и поэтому принимают один и тот же объект параметров (за исключением нескольких опций, специфичных для корневого компонента) и предоставляют те же хуки жизненного цикла.</p>
 <h2 id="Использование-компонентов"><a href="#Использование-компонентов" class="headerlink" title="Использование компонентов"></a>Использование компонентов</h2><h3 id="Глобальная-регистрация"><a href="#Глобальная-регистрация" class="headerlink" title="Глобальная регистрация"></a>Глобальная регистрация</h3><p>В предыдущих разделах мы научились создавать экземпляры Vue:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#some-element'</span>,</span><br><span class="line">  <span class="comment">// опции</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -1331,6 +1335,7 @@ new Vue({
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.component(<span class="string">'terms-of-service'</span>, &#123;</span><br><span class="line">  template: <span class="string">'\</span></span><br><span class="line"><span class="string">    &lt;div v-once&gt;\</span></span><br><span class="line"><span class="string">      &lt;h1&gt;Условия Использования&lt;/h1&gt;\</span></span><br><span class="line"><span class="string">      ... много-много статического контента ...\</span></span><br><span class="line"><span class="string">    &lt;/div&gt;\</span></span><br><span class="line"><span class="string">  '</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
     
+    
       <div class="guide-links">
         
           <span>← <a href="/v2/guide/forms.html">Работа с формами</a></span>
@@ -1339,7 +1344,7 @@ new Vue({
       </div>
     
     <div class="footer">
-      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+        <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 <div class="bsa-cpc"></div>
 <script>
   (function(){

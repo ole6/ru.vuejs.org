@@ -144,11 +144,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">Команда</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">Поддержать Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">Поддержать Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Единоразовые пожертвования</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">Повторяющиеся взносы</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Повторяющиеся взносы</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Магазин футболок</a></li>
     </ul></li>
   </ul>
@@ -237,11 +237,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">Команда</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">Поддержать Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">Поддержать Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Единоразовые пожертвования</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">Повторяющиеся взносы</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Повторяющиеся взносы</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Магазин футболок</a></li>
     </ul></li>
   </ul>
@@ -274,6 +274,9 @@
                   </a>
                   <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
                     <img src="/images/vueschool.png">
+                  </a>
+                  <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
+                    <img src="/images/datacamp.png">
                   </a>
                 </div>
             </div>
@@ -849,7 +852,8 @@
     
       <h1>Примеси</h1>
     
-    <h2 id="Основы"><a href="#Основы" class="headerlink" title="Основы"></a>Основы</h2><p>Примеси (mixins) — это гибкий инструмент повторного использования кода в компонентах Vue. Объект примеси может содержать любые опции компонентов. При использовании компонентом примеси, все опции примеси “подмешиваются” к собственным опциям компонента.</p>
+    
+      <h2 id="Основы"><a href="#Основы" class="headerlink" title="Основы"></a>Основы</h2><p>Примеси (mixins) — это гибкий инструмент повторного использования кода в компонентах Vue. Объект примеси может содержать любые опции компонентов. При использовании компонентом примеси, все опции примеси “подмешиваются” к собственным опциям компонента.</p>
 <p>Пример:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// определяем объект примеси</span></span><br><span class="line"><span class="keyword">var</span> myMixin = &#123;</span><br><span class="line">  created: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.hello()</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    hello: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'привет из примеси!'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// определяем компонент, использующий примесь</span></span><br><span class="line"><span class="keyword">var</span> Component = Vue.extend(&#123;</span><br><span class="line">  mixins: [myMixin]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> component = <span class="keyword">new</span> Component() <span class="comment">// =&gt; "привет из примеси!"</span></span><br></pre></td></tr></table></figure>
 <h2 id="Слияние-опций"><a href="#Слияние-опций" class="headerlink" title="Слияние опций"></a>Слияние опций</h2><p>Если примесь и компонент содержат пересекающиеся опции, они будут определённым образом объединены. Например, одноимённые хуки будут объединены в массив, что обеспечит вызов их всех. Кроме того, хуки примеси будут вызваны <strong>перед</strong> собственными хуками компонента:</p>
@@ -869,6 +873,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> merge = Vue.config.optionMergeStrategies.computed</span><br><span class="line">Vue.config.optionMergeStrategies.vuex = <span class="function"><span class="keyword">function</span> (<span class="params">toVal, fromVal</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!toVal) <span class="keyword">return</span> fromVal</span><br><span class="line">  <span class="keyword">if</span> (!fromVal) <span class="keyword">return</span> toVal</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    getters: merge(toVal.getters, fromVal.getters),</span><br><span class="line">    state: merge(toVal.state, fromVal.state),</span><br><span class="line">    actions: merge(toVal.actions, fromVal.actions)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     
+    
       <div class="guide-links">
         
         
@@ -877,7 +882,7 @@
       </div>
     
     <div class="footer">
-      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+        <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 <div class="bsa-cpc"></div>
 <script>
   (function(){

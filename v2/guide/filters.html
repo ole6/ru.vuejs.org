@@ -144,11 +144,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">Команда</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">Поддержать Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">Поддержать Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Единоразовые пожертвования</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">Повторяющиеся взносы</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Повторяющиеся взносы</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Магазин футболок</a></li>
     </ul></li>
   </ul>
@@ -237,11 +237,11 @@
   <a href="/v2/guide/team.html" class="nav-link team">Команда</a>
 </li>
 <li class="nav-dropdown-container support-vue">
-  <a class="nav-link">Поддержать Vue</a><span class="arrow"></span>
+  <a href="/support-vuejs/" class="nav-link">Поддержать Vue</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><ul>
       <li><a href="/support-vuejs/#One-time-Donations" class="nav-link">Единоразовые пожертвования</a></li>
-      <li><a href="/support-vuejs/#Recurring-Pledges" target="_blank" class="nav-link">Повторяющиеся взносы</a></li>
+      <li><a href="/support-vuejs/#Recurring-Pledges" class="nav-link">Повторяющиеся взносы</a></li>
       <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Магазин футболок</a></li>
     </ul></li>
   </ul>
@@ -274,6 +274,9 @@
                   </a>
                   <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
                     <img src="/images/vueschool.png">
+                  </a>
+                  <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
+                    <img src="/images/datacamp.png">
                   </a>
                 </div>
             </div>
@@ -849,7 +852,8 @@
     
       <h1>Фильтры</h1>
     
-    <p>Для распространённых задач форматирования текста во Vue используются фильтры. Они находят своё применение в двух местах: <strong>в mustache-интерполяциях и в выражениях <code>v-bind</code></strong> (последнее поддерживается в 2.1.0+). Фильтры добавляются в конце выражения JavaScript и отделяются вертикальной чертой:</p>
+    
+      <p>Для распространённых задач форматирования текста во Vue используются фильтры. Они находят своё применение в двух местах: <strong>в mustache-интерполяциях и в выражениях <code>v-bind</code></strong> (последнее поддерживается в 2.1.0+). Фильтры добавляются в конце выражения JavaScript и отделяются вертикальной чертой:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- mustache --&gt;</span></span><br><span class="line">&#123;&#123; message | capitalize &#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- v-bind --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">"rawId | formatId"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Вы можете определить локальные фильтры в опциях компонента:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">filters: &#123;</span><br><span class="line">  capitalize: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line">    value = value.toString()</span><br><span class="line">    <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -888,6 +892,7 @@
 <p>В данном случае <code>filterA</code> определяется как функция с тремя аргументами. Значение <code>message</code> будет передано первым аргументом. Простая строка <code>&#39;arg1&#39;</code> будет передана в <code>filterA</code> вторым аргументом, а значение выражения <code>arg2</code> — третьим.</p>
 
     
+    
       <div class="guide-links">
         
           <span>← <a href="/v2/guide/plugins.html">Плагины</a></span>
@@ -896,7 +901,7 @@
       </div>
     
     <div class="footer">
-      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+        <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 <div class="bsa-cpc"></div>
 <script>
   (function(){
