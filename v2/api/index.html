@@ -524,6 +524,7 @@
 <li><p><strong>Использование:</strong></p>
 <p>Регистрирует новый глобальный фильтр или возвращает уже зарегистрированный.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// регистрируем фильтр:</span></span><br><span class="line">Vue.filter(<span class="string">'my-filter'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// возвращаем обработанное значение</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// получаем фильтр, если он зарегистрирован:</span></span><br><span class="line"><span class="keyword">var</span> myFilter = Vue.filter(<span class="string">'my-filter'</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>См. также:</strong> <a href="../guide/filters.html">Фильтры</a></p>
 </li>
 </ul>
 <h3 id="Vue-component-id-definition"><a href="#Vue-component-id-definition" class="headerlink" title="Vue.component( id, [definition] )"></a>Vue.component( id, [definition] )</h3><ul>
@@ -781,9 +782,8 @@
 <li><p><strong>Тип:</strong> <code>Function</code></p>
 </li>
 <li><p><strong>Подробности:</strong></p>
-<p>Вызывается при изменении данных, до повторного рендеринга и обновления виртуального DOM-а.</p>
-<p>В этом хуке можно дополнительно изменять состояние, и это не вызовет нового повторного рендеринга.</p>
-<p><strong>При рендеринге на стороне сервера этот хук не вызывается.</strong></p>
+<p>Вызывается при изменении данных перед тем, как DOM будет обновляться. Это хорошее место для получения доступа к существующему DOM перед обновлением, например чтобы удалить добавленные слушатели событий.</p>
+<p><strong>Этот хук не вызывается во время рендеринга на стороне сервера, потому что на сервере выполняется только начальный рендеринг.</strong></p>
 </li>
 <li><p><strong>См. также:</strong> <a href="../guide/instance.html#Диаграмма-жизненного-цикла">Диаграмма жизненного цикла</a></p>
 </li>
