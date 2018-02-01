@@ -155,7 +155,7 @@
 </li>
 
 <li class="nav-dropdown-container language">
-  <a class="nav-link">Translations</a><span class="arrow"></span>
+  <a class="nav-link">Переводы</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><a href="https://vuejs.org/v2/guide/events.html" class="nav-link" target="_blank">English</a></li>
     <li><a href="https://cn.vuejs.org/v2/guide/events.html" class="nav-link" target="_blank">中文</a></li>
@@ -248,7 +248,7 @@
 </li>
 
 <li class="nav-dropdown-container language">
-  <a class="nav-link">Translations</a><span class="arrow"></span>
+  <a class="nav-link">Переводы</a><span class="arrow"></span>
   <ul class="nav-dropdown">
     <li><a href="https://vuejs.org/v2/guide/events.html" class="nav-link" target="_blank">English</a></li>
     <li><a href="https://cn.vuejs.org/v2/guide/events.html" class="nav-link" target="_blank">中文</a></li>
@@ -853,7 +853,7 @@
       <h1>Обработка событий</h1>
     
     
-      <h2 id="Подписка-на-события"><a href="#Подписка-на-события" class="headerlink" title="Подписка на события"></a>Подписка на события</h2><p>Чтобы подписаться на события DOM и выполнить JavaScript-код по их наступлении, примените директиву <code>v-on</code>.</p>
+      <h2 id="Подписка-на-события"><a href="#Подписка-на-события" class="headerlink" title="Подписка на события"></a>Подписка на события</h2><p>Чтобы подписаться на события DOM и выполнить JavaScript-код при их наступлении, примените директиву <code>v-on</code>.</p>
 <p>Например:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example-1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"counter += 1"</span>&gt;</span>+1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Кнопка выше была нажата &#123;&#123;counter&#125;&#125; раз<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> example1 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#example-1'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    counter: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -983,7 +983,7 @@ new Vue({
 <li><code>.meta</code></li>
 </ul>
 <blockquote>
-<p>Примечание: На клавиатурах Apple клавиша meta отмечена знаком ⌘. На клавиатурах Windows клавиша meta отмечена знаком ⊞. На клавиатурах Sun Microsystems клавиша meta отмечена символом ромба (◆). На некоторых клавиатурах, особенно MIT и Lisp machine и их преемников, таких как Knight-клавиатуры или space-cadet клавиатуры, клавиша meta отмечена словом “META”. На клавиатурах Symbolics, meta-клавиша отмечена словом “META” или “Meta”.</p>
+<p>Примечание: На клавиатурах Apple клавиша meta отмечена знаком ⌘. На клавиатурах Windows клавиша meta отмечена знаком ⊞. На клавиатурах Sun Microsystems клавиша meta отмечена символом ромба (◆). На некоторых клавиатурах, особенно MIT и Lisp machine и их преемников, таких как Knight-клавиатуры или клавиатуры space-cadet, клавиша meta отмечена словом “META”. На клавиатурах Symbolics, meta-клавиша отмечена словом “META” или “Meta”.</p>
 </blockquote>
 <p>Например:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Alt + C --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.alt.67</span>=<span class="string">"clear"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Ctrl + Click --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> @<span class="attr">click.ctrl</span>=<span class="string">"doSomething"</span>&gt;</span>Сделать что-нибудь<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1003,7 +1003,7 @@ new Vue({
 <li><code>.middle</code></li>
 </ul>
 <p>Эти модификаторы ограничивают обработчик события только вызовами определённой кнопкой мыши.</p>
-<h2 id="Почему-подписчики-указываются-в-HTML"><a href="#Почему-подписчики-указываются-в-HTML" class="headerlink" title="Почему подписчики указываются в HTML?"></a>Почему подписчики указываются в HTML?</h2><p>Может показаться, что такой подход к отслеживанию событий нарушает старое доброе правило “разделения мух и котлет”. Не беспокойтесь — поскольку все обработчики во Vue строго связываются с ответственным за текущее представление экземпляром vm, трудностей в поддержке не возникает. На практике, есть даже несколько преимуществ при использовании <code>v-on</code>:</p>
+<h2 id="Почему-подписчики-указываются-в-HTML"><a href="#Почему-подписчики-указываются-в-HTML" class="headerlink" title="Почему подписчики указываются в HTML?"></a>Почему подписчики указываются в HTML?</h2><p>Может показаться, что такой подход к отслеживанию событий нарушает старое доброе правило “разделения мух и котлет”. Не беспокойтесь — поскольку все обработчики во Vue строго связываются с ответственным за текущее представление экземпляром vm, трудностей в поддержке не возникает. На практике есть даже несколько преимуществ при использовании <code>v-on</code>:</p>
 <ol>
 <li><p>Легче получить представление об имеющихся обработчиках, просто пробежав глазами по HTML-коду шаблона.</p>
 </li>
