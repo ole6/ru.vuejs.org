@@ -284,7 +284,8 @@
                 Поддержите Vue.js
             </a>
             <h2>
-                Guide
+                
+                Руководство
                 
                     <select class="version-select">
                         <option value="SELF" selected>2.x</option>
@@ -854,7 +855,7 @@
     
     
       <p>Зачастую возникает необходимость динамически изменять CSS-классы и inline-стили элементов в зависимости от состояния приложения. Поскольку и то и другое — атрибуты, мы можем использовать <code>v-bind</code>: необходимо лишь вычислить результирующую строку при помощи выражения. Впрочем, каждый раз возиться с конкатенацией строк неудобно, к тому же это может привести к ошибкам. К счастью, у Vue есть дополнительные возможности директивы <code>v-bind</code> для работы с <code>class</code> и <code>style</code>. Эти атрибуты при динамическом связывании могут принимать не только строковые значения, но и массивы или объекты.</p>
-<h2 id="Связывание-CSS-классов"><a href="#Связывание-CSS-классов" class="headerlink" title="Связывание CSS-классов"></a>Связывание CSS-классов</h2><h3 id="Использование-объектов"><a href="#Использование-объектов" class="headerlink" title="Использование объектов"></a>Использование объектов</h3><p>Для динамического задания или удаления CSS классов мы можем передать в директиву <code>v-bind:class</code> объект:</p>
+<h2 id="Связывание-CSS-классов"><a href="#Связывание-CSS-классов" class="headerlink" title="Связывание CSS-классов"></a>Связывание CSS-классов</h2><h3 id="Использование-объектов"><a href="#Использование-объектов" class="headerlink" title="Использование объектов"></a>Использование объектов</h3><p>Для динамического задания или удаления CSS-классов мы можем передать в директиву <code>v-bind:class</code> объект:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Запись выше обозначает, что наличие класса <code>active</code> будет определяться <a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy" target="_blank" rel="noopener">истинностью</a> параметра <code>isActive</code>.</p>
 <p>Таким образом можно управлять несколькими классами, добавляя в объект дополнительные поля. Кроме того, <code>v-bind:class</code> можно использовать и совместно с обычным атрибутом <code>class</code>:</p>
@@ -885,15 +886,15 @@
 </blockquote>
 <p>При применении атрибута <code>class</code> к пользовательскому компоненту, классы будут добавлены к его корневому элементу. Собственные классы элемента при этом потеряны не будут.</p>
 <p>Возьмём, к примеру, такой компонент:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</span><br><span class="line">  template: <span class="string">'&lt;p class="foo bar"&gt;Hi&lt;/p&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</span><br><span class="line">  template: <span class="string">'&lt;p class="foo bar"&gt;Привет&lt;/p&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>Если при использовании указать дополнительные классы:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">class</span>=<span class="string">"baz boo"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>В результате рендеринга получим:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"foo bar baz boo"</span>&gt;</span>Hi<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"foo bar baz boo"</span>&gt;</span>Привет<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>То же самое справедливо для связывания классов с данными:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Если <code>isActive</code> истинно, результирующий HTML будет:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"foo bar active"</span>&gt;</span>Hi<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"foo bar active"</span>&gt;</span>Привет<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="Связывание-inline-стилей"><a href="#Связывание-inline-стилей" class="headerlink" title="Связывание inline-стилей"></a>Связывание inline-стилей</h2><h3 id="Использование-объектов-1"><a href="#Использование-объектов-1" class="headerlink" title="Использование объектов"></a>Использование объектов</h3><p>Объектная запись для <code>v-bind:style</code> довольно проста — выглядит почти как CSS, хотя, на самом деле, это объект JavaScript. Для указания свойств CSS можно применять как camelCase, так и kebab-case (не забывайте про кавычки при использовании kebab-case):</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"&#123; color: activeColor, fontSize: fontSize + 'px' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  activeColor: <span class="string">'red'</span>,</span><br><span class="line">  fontSize: <span class="number">30</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

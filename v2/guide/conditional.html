@@ -284,7 +284,8 @@
                 Поддержите Vue.js
             </a>
             <h2>
-                Guide
+                
+                Руководство
                 
                     <select class="version-select">
                         <option value="SELF" selected>2.x</option>
@@ -873,7 +874,7 @@
 <h3 id="Управление-повторным-использованием-элементов-при-помощи-key"><a href="#Управление-повторным-использованием-элементов-при-помощи-key" class="headerlink" title="Управление повторным использованием элементов при помощи key"></a>Управление повторным использованием элементов при помощи <code>key</code></h3><p>Vue старается рендерить элементы DOM настолько эффективно, насколько это возможно, зачастую переиспользуя их вместо того чтобы создавать заново. Помимо улучшения производительности, в этом подходе можно обнаружить и иные преимущества. Например, если вы позволяете пользователю переключаться между несколькими возможными типами логина:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Имя пользователя<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Введите имя пользователя"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Введите адрес email"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Переключение <code>loginType</code> в коде выше не сотрёт то, что пользователь уже ввёл. Оба шаблона используют одни и те же элементы, поэтому <code>&lt;input&gt;</code> не заменяется — только его <code>placeholder</code>.</p>
-<p>Попробуйте сами, сначала введя что-нибудь в input, а затем нажав на кнопку переключения:</p>
+<p>Попробуйте сами, сначала введя что-нибудь в поле ввода, а затем нажав на кнопку переключения:</p>
 
 <div id="no-key-example" class="demo">
   <div>
@@ -902,20 +903,20 @@ new Vue({
 })
 </script>
 
-<p>Надо сказать, что это поведение может не всегда быть тем, что нужно. Поэтому Vue позволяет явно сказать: “эти элементы должны быть полностью независимы: не надо их переиспользовать”. Для этого нужно всего лишь указать уникальное значение ключа <code>key</code>:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Имя пользователя<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Введите имя пользователя"</span> <span class="attr">key</span>=<span class="string">"username-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Введите адрес email"</span> <span class="attr">key</span>=<span class="string">"email-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>Теперь эти input’ы будут рендериться заново при каждом переключении. Смотрите сами:</p>
+<p>Такое поведение не всегда желательно, поэтому Vue позволяет явно сказать: “эти элементы должны быть полностью независимы: не надо их переиспользовать”. Для этого нужно всего лишь указать уникальное значение ключа <code>key</code>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Имя пользователя<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Введите имя пользователя"</span> <span class="attr">key</span>=<span class="string">"username-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Введите адрес email"</span> <span class="attr">key</span>=<span class="string">"email-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Теперь эти поля ввода будут рендериться заново при каждом переключении. Смотрите сами:</p>
 
 <div id="key-example" class="demo">
   <div>
     <template v-if="loginType === 'username'">
-  <label>Имя пользователя</label>
+      <label>Имя пользователя</label>
       <input placeholder="Введите имя пользователя" key="username-input">
-</template>
-<template v-else="">
-  <label>Email</label>
+    </template>
+    <template v-else="">
+      <label>Email</label>
       <input placeholder="Введите адрес email" key="email-input">
-</template>
+    </template>
   </div>
   <button @click="toggleLoginType">Переключить тип логина</button>
 </div>
@@ -933,16 +934,16 @@ new Vue({
 })
 </script>
 
-<p>Обратите внимание, что элементы <code>&lt;label&gt;</code> всё так же эффективно переиспользуются, поскольку для них <code>key</code> не указаны.</p>
+<p>Обратите внимание, что элементы <code>&lt;label&gt;</code> всё ещё эффективно переиспользуются, поскольку для них <code>key</code> не указаны.</p>
 <h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a><code>v-show</code></h2><p>Ещё одну возможность условного отображения даёт директива <code>v-show</code>. Используется она так же:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-show</span>=<span class="string">"ok"</span>&gt;</span>Привет!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Разница состоит в том, что элемент с <code>v-show</code> будет всегда оставаться в DOM, а изменяться будет лишь свойство <code>display</code> в его параметрах CSS.</p>
 <p class="tip">Обратите внимание, что <code>v-show</code> не поддерживает использование элемента <code>&lt;template&gt;</code> и не работает с <code>v-else</code>.</p>
 
-<h2 id="v-if-vs-v-show"><a href="#v-if-vs-v-show" class="headerlink" title="v-if vs v-show"></a><code>v-if</code> vs <code>v-show</code></h2><p><code>v-if</code> производит “настоящий” условный рендеринг, удостоверяясь что подписчики событий и дочерние компоненты внутри блока должным образом уничтожаются и воссоздаются при изменении истинности управляющего условия.</p>
+<h2 id="v-if-в-сравнении-с-v-show"><a href="#v-if-в-сравнении-с-v-show" class="headerlink" title="v-if в сравнении с v-show"></a><code>v-if</code> в сравнении с <code>v-show</code></h2><p><code>v-if</code> производит “настоящий” условный рендеринг, удостоверяясь что подписчики событий и дочерние компоненты внутри блока должным образом уничтожаются и воссоздаются при изменении истинности управляющего условия.</p>
 <p><code>v-if</code> также <strong>ленив</strong>: если условие ложно на момент первоначального рендеринга, он не произведёт никаких действий — условный блок не будет отображён, пока условие впервые не станет истинным.</p>
 <p><code>v-show</code>, напротив, куда проще: элемент всегда присутствует в DOM, и только CSS-свойство переключается в зависимости от значения выражения.</p>
-<p>В целом у <code>v-if</code> выше стоимость переключения, а у <code>v-show</code> выше стоимость первичного рендеринга. Так что если вы предполагаете, что переключения будут частыми, используйте <code>v-show</code>, если же редкими или вовсе маловероятными — <code>v-if</code>.</p>
+<p>В целом у <code>v-if</code> выше затраты на переключения, а у <code>v-show</code> более высокие затраты на первичный рендеринг. Так что если вы предполагаете, что переключения будут частыми, используйте <code>v-show</code>, если же редкими или вовсе маловероятными — <code>v-if</code>.</p>
 <h2 id="v-if-вместе-с-v-for"><a href="#v-if-вместе-с-v-for" class="headerlink" title="v-if вместе с v-for"></a><code>v-if</code> вместе с <code>v-for</code></h2><p>При совместном использовании <code>v-if</code> и <code>v-for</code>, <code>v-for</code> имеет более высокий приоритет. Подробности на странице <a href="list.html#v-for-и-v-if">рендеринга списков</a>.</p>
 
     
