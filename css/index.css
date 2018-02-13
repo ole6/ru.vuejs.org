@@ -181,6 +181,11 @@ pre .xml .cdata {
 .bsa-cpc .default-ad {
   display: none;
 }
+@media print {
+  #ad {
+    display: none;
+  }
+}
 body {
   font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   font-size: 15px;
@@ -408,7 +413,7 @@ sup.beta.beta {
   height: 40px;
   padding: 10px 60px;
   position: relative;
-  z-index: 2;
+  z-index: 100;
 }
 body.docs #header {
   position: fixed;
@@ -539,6 +544,11 @@ body.docs #nav {
   margin-left: -15px;
   background-size: 30px;
 }
+@media print {
+  #header {
+    display: none;
+  }
+}
 .sidebar {
   position: absolute;
   z-index: 10;
@@ -644,6 +654,11 @@ body.docs #nav {
   .sidebar.open {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
+  }
+}
+@media print {
+  .sidebar {
+    display: none;
   }
 }
 #sponsors {
