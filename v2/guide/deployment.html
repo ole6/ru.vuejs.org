@@ -267,21 +267,21 @@
   <div class="main-sponsor">
     <span>Cпонсоры</span>
     <div>
-      <a href="https://stdlib.com" target="_blank" class="logo">
-        <img src="/images/stdlib.png">
-      </a>
-      <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-        <img src="/images/bit.png" style="width:45px;height:45px;">
-      </a>
-      <a href="http://tooltwist.com/" target="_blank" class="logo">
-        <img src="/images/tooltwist.png">
-      </a>
-      <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
-        <img src="/images/vueschool.png">
-      </a>
-      <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
-        <img src="/images/datacamp.png">
-      </a>
+    <a href="https://stdlib.com" target="_blank" class="logo">
+      <img src="/images/stdlib.png">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit-wide.png">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png">
+    </a>
+    <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
+      <img src="/images/datacamp.png">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -866,9 +866,9 @@
 <h4 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h4><p>Используйте плагин Webpack <a href="https://webpack.js.org/plugins/define-plugin/" target="_blank" rel="noopener">DefinePlugin</a> для установки переменных окружения. Это позволит UglifyJS на этапе сборки удалить все предупреждения. Пример конфигурации:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">      <span class="string">'process.env'</span>: &#123;</span><br><span class="line">        NODE_ENV: <span class="string">'"production"'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Browserify"><a href="#Browserify" class="headerlink" title="Browserify"></a>Browserify</h4><ul>
-<li><p>Запустите сборку, указав в команде переменную <code>NODE_ENV</code> с значением <code>&quot;production&quot;</code>. Это позволит <code>vueify</code> исключить код для горячей замены модулей, а также код относящийся к разработке.</p>
+<li><p>Запустите сборку, указав в команде переменную <code>NODE_ENV</code> со значением <code>&quot;production&quot;</code>. Это позволит <code>vueify</code> исключить код для горячей замены модулей, а также код, относящийся к разработке.</p>
 </li>
-<li><p>Примените глобальную трансформацию <a href="https://github.com/hughsk/envify" target="_blank" rel="noopener">envify</a> к вашей сборке. Это позволит минификатору удалить все предупреждения из исходного кода Vue, обёрнутые в условия проверки переменной окружения. Например:</p>
+<li><p>Примените глобальное преобразование <a href="https://github.com/hughsk/envify" target="_blank" rel="noopener">envify</a> к вашей сборке. Это позволит минификатору удалить все предупреждения из исходного кода Vue, обёрнутые в условия проверки переменной окружения. Например:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">NODE_ENV=production browserify -g envify -e main.js | uglifyjs -c -m &gt; build.js</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Или используйте <a href="https://github.com/hughsk/envify" target="_blank" rel="noopener">envify</a> вместе с Gulp:</p>
@@ -881,9 +881,9 @@
 <h4 id="Rollup"><a href="#Rollup" class="headerlink" title="Rollup"></a>Rollup</h4><p>Используйте <a href="https://github.com/rollup/rollup-plugin-replace" target="_blank" rel="noopener">rollup-plugin-replace</a>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> replace = <span class="built_in">require</span>(<span class="string">'rollup-plugin-replace'</span>)</span><br><span class="line"></span><br><span class="line">rollup(&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  plugins: [</span><br><span class="line">    replace(&#123;</span><br><span class="line">      <span class="string">'process.env.NODE_ENV'</span>: <span class="built_in">JSON</span>.stringify( <span class="string">'production'</span> )</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;).then(...)</span><br></pre></td></tr></table></figure>
 <h2 id="Прекомпиляция-шаблонов"><a href="#Прекомпиляция-шаблонов" class="headerlink" title="Прекомпиляция шаблонов"></a>Прекомпиляция шаблонов</h2><p>При использовании DOM в качестве шаблона или строковых шаблонов в JavaScript, компиляция в <code>render</code>-функцию будет выполняться на лету. Это достаточно быстро для большинства случаев, но если ваше приложение нуждается в максимальной производительности стоит этого избегать.</p>
-<p>Самый простой способ предварительной компиляции шаблонов — использовать <a href="single-file-components.html">однофайловые компоненты</a>. На этапе сборки проекта будет выполнена предварительная компиляция, поэтому результирующий код будет содержать только <code>render</code>-функции вместо сырых строковых шаблонов.</p>
+<p>Самый простой способ предварительной компиляции шаблонов — использовать <a href="single-file-components.html">однофайловые компоненты</a>. На этапе сборки проекта будет выполнена предварительная компиляция, поэтому результирующий код будет содержать только <code>render</code>-функции вместо необработаных строковых шаблонов.</p>
 <p>Если вы используете Webpack и предпочитаете разделять JavaScript и файлы шаблонов, вы можете воспользоваться <a href="https://github.com/ktsn/vue-template-loader" target="_blank" rel="noopener">vue-template-loader</a>, который также преобразует файлы шаблонов в <code>render</code>-функции на JavaScript на этапе сборки.</p>
-<h2 id="Извлечение-CSS-из-компонентов"><a href="#Извлечение-CSS-из-компонентов" class="headerlink" title="Извлечение CSS из компонентов"></a>Извлечение CSS из компонентов</h2><p>При использовании однофайловых компонентов, CSS из компонента будет динамически добавлен как тег <code>&lt;style&gt;</code> через JavaScript. Это немного увеличивает затраты времени выполнения, поэтому при использовании рендеринга на стороне сервера может привести к “мельканию неоформленного содержимого” (англ. flash of unstyled content — FOUC). Извлечение CSS из всех компонентов в один файл позволит избежать этой проблемы, а также добиться лучших результатов в минификации и кешировании CSS.</p>
+<h2 id="Извлечение-CSS-из-компонентов"><a href="#Извлечение-CSS-из-компонентов" class="headerlink" title="Извлечение CSS из компонентов"></a>Извлечение CSS из компонентов</h2><p>При использовании однофайловых компонентов, CSS из компонента будет динамически добавлен как тег <code>&lt;style&gt;</code> через JavaScript. Это немного увеличивает затраты времени выполнения, поэтому при использовании рендеринга на стороне сервера может привести к “мельканию неоформленного содержимого” (flash of unstyled content — FOUC). Извлечение CSS из всех компонентов в один файл позволит избежать этой проблемы, а также добиться лучших результатов в минификации и кешировании CSS.</p>
 <p>Обратитесь к документации соответствующих инструментов для сборки, чтобы узнать как это реализовать:</p>
 <ul>
 <li><a href="https://vue-loader.vuejs.org/ru/configurations/extract-css.html" target="_blank" rel="noopener">Webpack + vue-loader</a> (в <code>vue-cli</code> с шаблоном webpack это уже настроено)</li>

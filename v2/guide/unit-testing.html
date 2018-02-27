@@ -267,21 +267,21 @@
   <div class="main-sponsor">
     <span>Cпонсоры</span>
     <div>
-      <a href="https://stdlib.com" target="_blank" class="logo">
-        <img src="/images/stdlib.png">
-      </a>
-      <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-        <img src="/images/bit.png" style="width:45px;height:45px;">
-      </a>
-      <a href="http://tooltwist.com/" target="_blank" class="logo">
-        <img src="/images/tooltwist.png">
-      </a>
-      <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
-        <img src="/images/vueschool.png">
-      </a>
-      <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
-        <img src="/images/datacamp.png">
-      </a>
+    <a href="https://stdlib.com" target="_blank" class="logo">
+      <img src="/images/stdlib.png">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit-wide.png">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png">
+    </a>
+    <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
+      <img src="/images/datacamp.png">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -871,7 +871,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> MyComponent <span class="keyword">from</span> <span class="string">'./MyComponent.vue'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// вспомогательная функция, выполняющая монтирование и</span></span><br><span class="line"><span class="comment">// возвращающая строку с результатами рендеринга</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRenderedText</span> (<span class="params">Component, propsData</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> Constructor = Vue.extend(Component)</span><br><span class="line">  <span class="keyword">const</span> vm = <span class="keyword">new</span> Constructor(&#123; <span class="attr">propsData</span>: propsData &#125;).$mount()</span><br><span class="line">  <span class="keyword">return</span> vm.$el.textContent</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'MyComponent'</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">'render correctly with different props'</span>, () =&gt; &#123;</span><br><span class="line">    expect(getRenderedText(MyComponent, &#123;</span><br><span class="line">      msg: <span class="string">'Hello'</span></span><br><span class="line">    &#125;)).toBe(<span class="string">'Hello'</span>)</span><br><span class="line"></span><br><span class="line">    expect(getRenderedText(MyComponent, &#123;</span><br><span class="line">      msg: <span class="string">'Bye'</span></span><br><span class="line">    &#125;)).toBe(<span class="string">'Bye'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h2 id="Контроль-асинхронных-обновлений"><a href="#Контроль-асинхронных-обновлений" class="headerlink" title="Контроль асинхронных обновлений"></a>Контроль асинхронных обновлений</h2><p>Поскольку Vue <a href="reactivity.html#Асинхронная-очередь-обновлений">выполняет обновления DOM асинхронно</a>, контроль результатов обновления DOM в зависимости от изменений состояния компонента должен выполняться в переданном в <code>Vue.nextTick</code> коллбэке:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Оценить созданный HTML после обновления состояния компонента</span></span><br><span class="line">it(<span class="string">'updates the rendered message when vm.message updates'</span>, done =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(MyComponent).$mount()</span><br><span class="line">  vm.message = <span class="string">'foo'</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// дождаться следующего "тика" перед оценкой состояния DOM</span></span><br><span class="line">  Vue.nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    expect(vm.$el.textContent).toBe(<span class="string">'foo'</span>)</span><br><span class="line">    done()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>Мы планируем создать набор вспомогательных функций для дальнейшего облегчения тестирования рендеринга компонентов с определёнными ограничениями (напр. для поверхностного рендеринга, игнорирующего дочерние компоненты) и оценки его результатов.</p>
+<p>Мы планируем создать набор вспомогательных функций для дальнейшего облегчения тестирования рендеринга компонентов с определёнными ограничениями (например, для поверхностного рендеринга, игнорирующего дочерние компоненты) и оценки его результатов.</p>
 
     
     

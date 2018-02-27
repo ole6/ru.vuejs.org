@@ -267,21 +267,21 @@
   <div class="main-sponsor">
     <span>Cпонсоры</span>
     <div>
-      <a href="https://stdlib.com" target="_blank" class="logo">
-        <img src="/images/stdlib.png">
-      </a>
-      <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-        <img src="/images/bit.png" style="width:45px;height:45px;">
-      </a>
-      <a href="http://tooltwist.com/" target="_blank" class="logo">
-        <img src="/images/tooltwist.png">
-      </a>
-      <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
-        <img src="/images/vueschool.png">
-      </a>
-      <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
-        <img src="/images/datacamp.png">
-      </a>
+    <a href="https://stdlib.com" target="_blank" class="logo">
+      <img src="/images/stdlib.png">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit-wide.png">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png">
+    </a>
+    <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
+      <img src="/images/datacamp.png">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -870,7 +870,7 @@
 </ul>
 <p>Однако, они имеют различные целевые аудитории.</p>
 <p><strong>Vuex 2.0</strong> радикально переписан и имеет упрощенный API, для тех, кто начинает новые проекты или хочет быть на острие прогресса в области управления состоянием фронтенд-приложений. <strong>Он не покрывается данной инструкцией по миграции</strong>, поэтому если вы хотите узнать о нём больше — обратитесь к <a href="https://vuex.vuejs.org/ru/index.html" target="_blank" rel="noopener">документации Vuex 2.0</a>.</p>
-<p><strong>Vuex 1.0</strong> обратно совместим, и требует внесения лишь довольно незначительных изменений при обновлении. Рекомендуется для тех, кто уже имеет дело с большими проектами, либо, для тех, кто просто хочет постепенно обновиться до Vue 2.0. Данное руководство призвано содействовать этому процессу, но включает в себя только заметки по миграции. Для изучения полного руководство по использованию обратитесь к <a href="https://github.com/vuejs/vuex/tree/1.0/docs/en" target="_blank" rel="noopener">документации Vuex 1.0</a>.</p>
+<p><strong>Vuex 1.0</strong> в основном обратно совместим, поэтому требует внесения довольно незначительных изменений при обновлении. Рекомендуется для тех, кто уже имеет дело с большими проектами, либо для тех, кто просто хочет постепенно обновиться до Vue 2.0. Данное руководство призвано содействовать этому процессу, но включает в себя только заметки по миграции. Для изучения полного руководство по использованию обратитесь к <a href="https://github.com/vuejs/vuex/tree/1.0/docs/en" target="_blank" rel="noopener">документации Vuex 1.0</a>.</p>
 <h2 id="store-watch-со-строковым-параметром-заменено"><a href="#store-watch-со-строковым-параметром-заменено" class="headerlink" title="store.watch со строковым параметром заменено"></a><code>store.watch</code> со строковым параметром <sup>заменено</sup></h2><p><code>store.watch</code> теперь принимает в качестве аргумента только функции. Например, вы должны заменить:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">store.watch(<span class="string">'user.notifications'</span>, callback)</span><br></pre></td></tr></table></figure>
 <p>на:</p>
@@ -879,7 +879,7 @@
 
 <div class="upgrade-path">
   <h4>Обновление</h4>
-  <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">миграционного помощника</a> в вашем проекте, чтобы найти использование <code>store.watch</code> со строкой в качестве первого аргумента.</p>
+  <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">миграционный помощник</a> в вашем проекте, чтобы найти использование <code>store.watch</code> со строкой в качестве первого аргумента.</p>
 </div>
 
 <h2 id="Вызов-событий-из-хранилища-удалено"><a href="#Вызов-событий-из-хранилища-удалено" class="headerlink" title="Вызов событий из хранилища удалено"></a>Вызов событий из хранилища <sup>удалено</sup></h2><p>Экземпляр хранилища больше не предоставляет интерфейс вызова событий (<code>on</code>,<code>off</code>, <code>emit</code>). Если вы ранее использовали хранилище в качестве глобальной шины событий - <a href="migration.html#dispatch-and-broadcast-removed">см. этот раздел</a> инструкций по миграции.</p>
@@ -889,16 +889,16 @@
 
 <div class="upgrade-path">
   <h4>Обновление</h4>
-  <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">миграционного помощника</a> в вашем проекте, чтобы найти использование <code>store.on</code>, <code>store.off</code> и <code>store.emit</code>.</p>
+  <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">миграционный помощник</a> в вашем проекте, чтобы найти использование <code>store.on</code>, <code>store.off</code> и <code>store.emit</code>.</p>
 </div>
 
-<h2 id="Прослойки-заменено"><a href="#Прослойки-заменено" class="headerlink" title="Прослойки заменено"></a>Прослойки <sup>заменено</sup></h2><p>Прослойки заменены плагинами. Плагин представляет собой обычную функцию, которая получает хранилище в качестве единственного аргумента, и может слушать событие мутации в хранилище:</p>
+<h2 id="Прослойки-заменено"><a href="#Прослойки-заменено" class="headerlink" title="Прослойки заменено"></a>Прослойки <sup>заменено</sup></h2><p>Прослойки заменены плагинами. Плагин представляет собой обычную функцию, которая получает хранилище в качестве единственного аргумента и может слушать событие мутации в хранилище:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myPlugins = <span class="function"><span class="params">store</span> =&gt;</span> &#123;</span><br><span class="line">  store.subscribe(<span class="string">'mutation'</span>, (mutation, state) =&gt; &#123;</span><br><span class="line">    <span class="comment">// Дальнейшие действия...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Для более детального изучения, см. <a href="https://github.com/vuejs/vuex/blob/1.0/docs/en/plugins.md" target="_blank" rel="noopener">документацию по плагинам</a>.</p>
+<p>Для более детального изучения см. <a href="https://github.com/vuejs/vuex/blob/1.0/docs/en/plugins.md" target="_blank" rel="noopener">документацию по плагинам</a>.</p>
 
 <div class="upgrade-path">
   <h4>Обновление</h4>
-  <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">миграционного помощника</a> в вашем проекте, чтобы найти использование <code>middlewares</code> в вашем хранилище.</p>
+  <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="noopener">миграционный помощник</a> в вашем проекте, чтобы найти использование <code>middlewares</code> в вашем хранилище.</p>
 </div>
 
 

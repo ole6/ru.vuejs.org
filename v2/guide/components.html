@@ -267,21 +267,21 @@
   <div class="main-sponsor">
     <span>Cпонсоры</span>
     <div>
-      <a href="https://stdlib.com" target="_blank" class="logo">
-        <img src="/images/stdlib.png">
-      </a>
-      <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-        <img src="/images/bit.png" style="width:45px;height:45px;">
-      </a>
-      <a href="http://tooltwist.com/" target="_blank" class="logo">
-        <img src="/images/tooltwist.png">
-      </a>
-      <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
-        <img src="/images/vueschool.png">
-      </a>
-      <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
-        <img src="/images/datacamp.png">
-      </a>
+    <a href="https://stdlib.com" target="_blank" class="logo">
+      <img src="/images/stdlib.png">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit-wide.png">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png">
+    </a>
+    <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
+      <img src="/images/datacamp.png">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -946,7 +946,7 @@ new Vue({
 })
 </script>
 
-<h3 id="Композиция-компонентов"><a href="#Композиция-компонентов" class="headerlink" title="Композиция компонентов"></a>Композиция компонентов</h3><p>Компоненты обычно используются совместно, в основном в рамках иерархических отношений, когда компонент-родитель A ссылается на компонент-потомок B в своём собственном шаблоне. Для этого нужно обеспечить коммуникацию компонентов друг с другом. Например, родитель может передавать данные потомку, а потомок, в свою очередь, может уведомлять родителя о произошедших событиях. С помощью чётко заданного интерфейса взаимодействие между компонентами сводится к необходимому минимуму. Благодаря такому подходу можно писать и анализировать код каждого компонента в условиях относительной изоляции. Это упрощает поддержку и потенциально облегчает повторное использование компонентов.</p>
+<h3 id="Композиция-компонентов"><a href="#Композиция-компонентов" class="headerlink" title="Композиция компонентов"></a>Композиция компонентов</h3><p>Компоненты обычно используются совместно, в основном в рамках иерархических отношений, когда компонент-родитель A ссылается на компонент-потомок Б в своём собственном шаблоне. Для этого нужно обеспечить коммуникацию компонентов друг с другом. Например, родитель может передавать данные потомку, а потомок, в свою очередь, может уведомлять родителя о произошедших событиях. С помощью чётко заданного интерфейса взаимодействие между компонентами сводится к необходимому минимуму. Благодаря такому подходу можно писать и анализировать код каждого компонента в условиях относительной изоляции. Это упрощает поддержку и потенциально облегчает повторное использование компонентов.</p>
 <p>Во Vue иерархические отношения подчиняются следующему принципу: <strong>“входные параметры — вниз, события — вверх” (“props down, events up”)</strong>. Родитель передаёт данные потомку через <strong>входные параметры (props)</strong>, а потомок посылает сообщения родителю посредством <strong>событий (events)</strong>. Давайте посмотрим как это работает.</p>
 <p style="text-align: center;"><br>  <img style="width: 300px;" src="/images/props-events.png" alt="props down, events up"><br></p>
 

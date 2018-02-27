@@ -267,21 +267,21 @@
   <div class="main-sponsor">
     <span>Cпонсоры</span>
     <div>
-      <a href="https://stdlib.com" target="_blank" class="logo">
-        <img src="/images/stdlib.png">
-      </a>
-      <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
-        <img src="/images/bit.png" style="width:45px;height:45px;">
-      </a>
-      <a href="http://tooltwist.com/" target="_blank" class="logo">
-        <img src="/images/tooltwist.png">
-      </a>
-      <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
-        <img src="/images/vueschool.png">
-      </a>
-      <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
-        <img src="/images/datacamp.png">
-      </a>
+    <a href="https://stdlib.com" target="_blank" class="logo">
+      <img src="/images/stdlib.png">
+    </a>
+    <a href="https://www.bitsrc.io/?utm_source=vue&utm_medium=vue&utm_campaign=vue&utm_term=vue&utm_content=vue" target="_blank" class="logo">
+      <img src="/images/bit-wide.png">
+    </a>
+    <a href="http://tooltwist.com/" target="_blank" class="logo">
+      <img src="/images/tooltwist.png">
+    </a>
+    <a href="https://vueschool.io/?utm_source=Vuejs.org&utm_medium=Banner&utm_campaign=Sponsored%20Banner&utm_content=V1" target="_blank" class="logo">
+      <img src="/images/vueschool.png">
+    </a>
+    <a href="https://www.datacamp.com/careers?utm_source=vuejs&utm_medium=sidebar" target="_blank" class="logo">
+      <img src="/images/datacamp.png">
+    </a>
     </div>
   </div>
   <a class="become-backer" href="/support-vuejs">
@@ -866,7 +866,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> sourceOfTruth = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> vmA = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: sourceOfTruth</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> vmB = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: sourceOfTruth</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>Теперь при любых изменениях <code>sourceOfTruth</code> обновится и <code>vmA</code>, и <code>vmB</code>. Подкомпоненты этих экземпляров также имеют доступ — используя <code>this.$root.$data</code>. Эффект “единого источника истины” достигнут, но отладка превратится в сущее мучение: любая часть данных может быть изменена любой частью приложения в любой момент и без каких-либо следов.</p>
 <p>Для решения этой проблемы, мы можем использовать простое <strong>хранилище</strong>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> store = &#123;</span><br><span class="line">  debug: <span class="literal">true</span>,</span><br><span class="line">  state: &#123;</span><br><span class="line">    message: <span class="string">'Hello!'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  setMessageAction (newValue) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.debug) <span class="built_in">console</span>.log(<span class="string">'setMessageAction вызвано с '</span>, newValue)</span><br><span class="line">    <span class="keyword">this</span>.state.message = newValue</span><br><span class="line">  &#125;,</span><br><span class="line">  clearMessageAction () &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.debug) <span class="built_in">console</span>.log(<span class="string">'clearMessageAction вызвано'</span>)</span><br><span class="line">    <span class="keyword">this</span>.state.message = <span class="string">''</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> store = &#123;</span><br><span class="line">  debug: <span class="literal">true</span>,</span><br><span class="line">  state: &#123;</span><br><span class="line">    message: <span class="string">'Привет!'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  setMessageAction (newValue) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.debug) <span class="built_in">console</span>.log(<span class="string">'setMessageAction вызвано с '</span>, newValue)</span><br><span class="line">    <span class="keyword">this</span>.state.message = newValue</span><br><span class="line">  &#125;,</span><br><span class="line">  clearMessageAction () &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.debug) <span class="built_in">console</span>.log(<span class="string">'clearMessageAction вызвано'</span>)</span><br><span class="line">    <span class="keyword">this</span>.state.message = <span class="string">''</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Обратите внимание, что все действия, изменяющие состояние хранилища, сами помещены в него. Такой подход к глобальному управлению состоянием приложения облегчает понимание возможных изменений и источников их появления. Кроме того, если что-то пойдёт не так — у нас будет лог, по которому можно отследить последовательность действий, приводящую к возникновению бага.</p>
 <p>Каждый экземпляр/компонент по-прежнему может иметь собственное, частное состояние:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> vmA = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    privateState: &#123;&#125;,</span><br><span class="line">    sharedState: store.state</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> vmB = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    privateState: &#123;&#125;,</span><br><span class="line">    sharedState: store.state</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
