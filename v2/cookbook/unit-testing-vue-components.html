@@ -126,6 +126,7 @@
     </ul></li>
     <li><h4>Новости</h4></li>
     <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Еженедельные новости</a></li>
       <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank">Roadmap</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
       <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Блог</a></li>
@@ -219,6 +220,7 @@
     </ul></li>
     <li><h4>Новости</h4></li>
     <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Еженедельные новости</a></li>
       <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank">Roadmap</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
       <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Блог</a></li>
@@ -265,7 +267,7 @@
         <div class="list">
             <div id="sidebar-sponsors">
   <div class="main-sponsor">
-    <span>Cпонсоры</span>
+    <span>Спонсоры</span>
     <div>
     <a href="https://stdlib.com" target="_blank" class="logo">
       <img src="/images/stdlib.png">
@@ -362,6 +364,28 @@
             <a href="/v2/cookbook/editable-svg-icons.html" class="sidebar-link">Editable SVG Icon Systems</a>
         </li>
     
+        
+        
+        
+            
+            <!-- Move cookbook sections here once they have -->
+            <!-- at least one recipe -->
+        
+        <li>
+            <a href="/v2/cookbook/serverless-blog.html" class="sidebar-link">Create a CMS-Powered Blog</a>
+        </li>
+    
+        
+        
+        
+            
+            <!-- Move cookbook sections here once they have -->
+            <!-- at least one recipe -->
+        
+        <li>
+            <a href="/v2/cookbook/using-axios-to-consume-apis.html" class="sidebar-link">Using Axios to Consume APIs</a>
+        </li>
+    
     
         <li><h3>Components</h3></li>
         <li><h4>Form Inputs</h4></li>
@@ -427,14 +451,14 @@
 <li>if the entered username is less than seven letters, display an error</li>
 </ul>
 <p>Let’s take a look at the component code first:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"message"</span>&gt;</span></span><br><span class="line">      &#123;&#123; message &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    Enter your username: <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"usernane"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> </span></span><br><span class="line"><span class="tag">      <span class="attr">v-if</span>=<span class="string">"error"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"error"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">      Please enter a username with at least seven letters.</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">'Foo'</span>,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  data () &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">      message: <span class="string">'Welcome to the Vue.js cookbook'</span>,</span></span><br><span class="line"><span class="javascript">      username: <span class="string">''</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  computed: &#123;</span></span><br><span class="line"><span class="undefined">    error () &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> <span class="keyword">this</span>.username.trim().length &lt; <span class="number">7</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"message"</span>&gt;</span></span><br><span class="line">      &#123;&#123; message &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    Enter your username: <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"username"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> </span></span><br><span class="line"><span class="tag">      <span class="attr">v-if</span>=<span class="string">"error"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">class</span>=<span class="string">"error"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">      Please enter a username with at least seven letters.</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">'Foo'</span>,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  data () &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">      message: <span class="string">'Welcome to the Vue.js cookbook'</span>,</span></span><br><span class="line"><span class="javascript">      username: <span class="string">''</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  computed: &#123;</span></span><br><span class="line"><span class="undefined">    error () &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> <span class="keyword">this</span>.username.trim().length &lt; <span class="number">7</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>The things that we should test are:</p>
 <ul>
 <li>is the <code>message</code> rendered?</li>
 <li>if <code>error</code> is <code>true</code>, <code>&lt;div class=&quot;error&quot;</code>&gt; should be present</li>
 <li>if <code>error</code> is <code>false</code>, <code>&lt;div class=&quot;error&quot;</code>&gt; should not be present</li>
 </ul>
-<p>And our first attempt at at test:</p>
+<p>And our first attempt at test:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; shallow &#125; <span class="keyword">from</span> <span class="string">'vue-test-utils'</span></span><br><span class="line"></span><br><span class="line">describe(<span class="string">'Foo'</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">'renders a message and responds correctly to user input'</span>, () =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> wrapper = shallow(Foo, &#123;</span><br><span class="line">    data: &#123;</span><br><span class="line">      message: <span class="string">'Hello World'</span>,</span><br><span class="line">      username: <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// see if the message renders</span></span><br><span class="line">  expect(wrapper.find(<span class="string">'.message'</span>).text()).toEqual(<span class="string">'Hello World'</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// assert the error is rendered</span></span><br><span class="line">  expect(wrapper.find(<span class="string">'.error'</span>).exists()).toBeTruthy()</span><br><span class="line"></span><br><span class="line">  <span class="comment">// update the username and assert error is longer rendered</span></span><br><span class="line">  wrapper.setData(&#123; <span class="attr">username</span>: <span class="string">'Lachlan'</span>  &#125;)</span><br><span class="line">  expect(wrapper.find(<span class="string">'.error'</span>).exists()).toBeFalsy()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>There are some problems with the above:</p>
 <ul>
@@ -446,12 +470,12 @@
 <li>only making one assertion per <code>it</code> block</li>
 <li>having short, clear test descriptions</li>
 <li>providing only the minimum data requires for the test</li>
-<li>refactoring duplucated logic (creating the <code>wrapper</code> and setting the <code>username</code> variable) into a factory function</li>
+<li>refactoring duplicated logic (creating the <code>wrapper</code> and setting the <code>username</code> variable) into a factory function</li>
 </ul>
 <p><em>Updated test</em>:<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; shallow &#125; <span class="keyword">from</span> <span class="string">'vue-test-utils'</span></span><br><span class="line"><span class="keyword">import</span> Foo <span class="keyword">from</span> <span class="string">'./Foo'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> factory = <span class="function">(<span class="params">values = &#123;&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> shallow(Foo, &#123;</span><br><span class="line">    data: &#123; ...values  &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'Foo'</span>, () =&gt; &#123;</span><br><span class="line">  it(<span class="string">'renders a welcome message'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = factory()</span><br><span class="line"></span><br><span class="line">    expect(wrapper.find(<span class="string">'.message'</span>).text()).toEqual(<span class="string">"Welcome to the Vue.js cookbook"</span>)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'renders an error when username is less than 7 characters'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = factory(&#123; <span class="attr">username</span>: <span class="string">''</span>  &#125;)</span><br><span class="line"></span><br><span class="line">    expect(wrapper.find(<span class="string">'.error'</span>).exists()).toBeTruthy()</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'renders an error when username is whitespace'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = factory(&#123; <span class="attr">username</span>: <span class="string">' '</span>.repeat(<span class="number">7</span>)  &#125;)</span><br><span class="line"></span><br><span class="line">    expect(wrapper.find(<span class="string">'.error'</span>).exists()).toBeTruthy()</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'does not render an error when username is 7 characters or more'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = factory(&#123; <span class="attr">username</span>: <span class="string">'Lachlan'</span>  &#125;)</span><br><span class="line"></span><br><span class="line">    expect(wrapper.find(<span class="string">'.error'</span>).exists()).toBeFalsy()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>Points to note:</p>
 <p>At the top, we declare the factory function which merges the <code>values</code> object into <code>data</code> and returns a new <code>wrapper</code> instance. This way, we don’t need to duplicate <code>const wrapper = shallow(Foo)</code> in every test. Another great benefit to this is when more complex components with a method or computed property you might want to mock or stub in every test, you only need to declare it once. </p>
-<h2 id="Additional-Context"><a href="#Additional-Context" class="headerlink" title="Additional Context"></a>Additional Context</h2><p>Thee above test is fairly simple, but in practise Vue components often have other behaviors you want to test, such as:</p>
+<h2 id="Additional-Context"><a href="#Additional-Context" class="headerlink" title="Additional Context"></a>Additional Context</h2><p>The above test is fairly simple, but in practice Vue components often have other behaviors you want to test, such as:</p>
 <ul>
 <li>making API calls</li>
 <li>committing or dispatching mutations or actions with a <code>Vuex</code> store</li>

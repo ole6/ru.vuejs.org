@@ -126,6 +126,7 @@
     </ul></li>
     <li><h4>Новости</h4></li>
     <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Еженедельные новости</a></li>
       <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank">Roadmap</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
       <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Блог</a></li>
@@ -218,6 +219,7 @@
     </ul></li>
     <li><h4>Новости</h4></li>
     <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Еженедельные новости</a></li>
       <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank">Roadmap</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
       <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Блог</a></li>
@@ -293,7 +295,7 @@ Vue.js является программным продуктом с откры�
 </div>
 
 <div id="coin-details" v-if="type && coins[type]">
-  <p>{{ coins[type].name }} Адрес:<br>{{ coins[type].address }}</p>
+  <p>Адрес {{ coins[type].name }}:<br>{{ coins[type].address }}</p>
   <img :src="'/images/coin-' + type + '.png'">
 </div>
 <script>
@@ -329,7 +331,7 @@ window.addEventListener('hashchange', function () {
 <h2 id="Recurring-Pledges">Повторяющиеся взносы</h2>
 
 <p>
-Повторяющиеся взносы предоставляют эксклюзивные привилегии, например указание вашего имени в GitHub репозитории Vue, или размещение логотипа вашей компании на этом веб-сайте.
+Повторяющиеся взносы предоставляют эксклюзивные привилегии, например, упоминание вашего имени в GitHub репозитории Vue или размещение логотипа вашей компании на этом сайте.
 </p>
 
 <ul>
@@ -394,9 +396,6 @@ window.addEventListener('hashchange', function () {
   <a href="https://chaitin.cn/en/" target="_blank">
     <img src="/images/chaitin.png">
   </a>
-  <a href="http://monterail.com/" target="_blank">
-    <img src="/images/monterail.png">
-  </a>
   <a href="https://anymod.com" target="_blank">
     <img src="/images/anymod.png">
   </a>
@@ -423,6 +422,12 @@ window.addEventListener('hashchange', function () {
   </a>
   <a href="https://leanpub.com/vuejs2" target="_blank">
     <img src="/images/tmvuejs2.png">
+  </a>
+  <a href="https://www.bmqb.com/jobs" target="_blank">
+    <img src="/images/bmqb.png">
+  </a>
+  <a href="https://codepilot.ai" target="_blank">
+    <img src="/images/codepilot.png">
   </a>
 </p>
 
@@ -462,7 +467,7 @@ window.addEventListener('hashchange', function () {
 </p>
 
 <p>
-Если вы являетесь владельцем бизнеса и используете Vue в своем продукте, приносящем доход, то спонсирование разработки Vue имеет смысл с точки зрения пользы для бизнеса: <b>это гарантирует, что проект, на который полагается ваш продукт остаётся здоровым и активно поддерживаемым.</b> Это также повышает вашу видимость в сообществе Vue и облегчает привлечение Vue-разработчиков.
+Если вы являетесь владельцем бизнеса и используете Vue в своем продукте, приносящем доход, то спонсирование разработки Vue имеет смысл с точки зрения пользы для бизнеса: <b>это гарантирует, что проект, на который полагается ваш продукт, остаётся здоровым и активно поддерживаемым.</b> Это также повышает вашу видимость в сообществе Vue и облегчает привлечение Vue-разработчиков.
 </p>
 
 <p>

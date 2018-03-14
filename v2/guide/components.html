@@ -126,6 +126,7 @@
     </ul></li>
     <li><h4>Новости</h4></li>
     <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Еженедельные новости</a></li>
       <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank">Roadmap</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
       <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Блог</a></li>
@@ -219,6 +220,7 @@
     </ul></li>
     <li><h4>Новости</h4></li>
     <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Еженедельные новости</a></li>
       <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank">Roadmap</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
       <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Блог</a></li>
@@ -265,7 +267,7 @@
         <div class="list">
             <div id="sidebar-sponsors">
   <div class="main-sponsor">
-    <span>Cпонсоры</span>
+    <span>Спонсоры</span>
     <div>
     <a href="https://stdlib.com" target="_blank" class="logo">
       <img src="/images/stdlib.png">
@@ -1150,7 +1152,7 @@ new Vue({
 })
 </script>
 
-<p>В этом втором примере важно отметить, что дочерний компонент всё остаётся полностью независимым от всего происходящего снаружи.<br>Он всего лишь уведомляет внешний мир о происходящем с ним, включая данные полезной нагрузки в генераторе событий (event emitter), на случай, если родительскому компоненту это будет интересно.</p>
+<p>В этом втором примере важно отметить, что дочерний компонент всё ещё остаётся полностью независимым от всего происходящего снаружи. Он всего лишь уведомляет внешний мир о происходящем с ним, включая данные полезной нагрузки в генераторе событий (event emitter), на случай, если родительскому компоненту это будет интересно.</p>
 <h3 id="Подписка-на-нативные-события-в-компонентах"><a href="#Подписка-на-нативные-события-в-компонентах" class="headerlink" title="Подписка на нативные события в компонентах"></a>Подписка на нативные события в компонентах</h3><p>Иногда нужно подписаться на нативные события браузера в корневом элементе компонента. В таких случаях можно применить <code>v-on</code> с модификатором <code>.native</code>, например так:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">v-on:click.native</span>=<span class="string">"doTheThing"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="Модификатор-sync"><a href="#Модификатор-sync" class="headerlink" title="Модификатор .sync"></a>Модификатор <code>.sync</code></h3><blockquote>
@@ -1388,8 +1390,12 @@ new Vue({
     
       <div class="guide-links">
         
+        
           <span>← <a href="/v2/guide/forms.html">Работа с формами</a></span>
         
+        
+        
+          <span style="float: right;"><a href="/v2/guide/transitions.html">Анимирование списков и появления/исчезновения</a> →</span>
         
       </div>
     

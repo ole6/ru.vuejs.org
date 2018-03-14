@@ -126,6 +126,7 @@
     </ul></li>
     <li><h4>Новости</h4></li>
     <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Еженедельные новости</a></li>
       <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank">Roadmap</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
       <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Блог</a></li>
@@ -219,6 +220,7 @@
     </ul></li>
     <li><h4>Новости</h4></li>
     <li><ul>
+      <li><a href="https://news.vuejs.org" class="nav-link" target="_blank">Еженедельные новости</a></li>
       <li><a href="https://github.com/vuejs/roadmap" class="nav-link" target="_blank">Roadmap</a></li>
       <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
       <li><a href="https://medium.com/the-vue-point" class="nav-link" target="_blank">Блог</a></li>
@@ -265,7 +267,7 @@
         <div class="list">
             <div id="sidebar-sponsors">
   <div class="main-sponsor">
-    <span>Cпонсоры</span>
+    <span>Спонсоры</span>
     <div>
     <a href="https://stdlib.com" target="_blank" class="logo">
       <img src="/images/stdlib.png">
@@ -516,7 +518,7 @@
 </li>
 <li><p><strong>Использование:</strong></p>
 <p>Регистрирует новую глобальную директиву или возвращает уже зарегистрированную.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// регистрируем директиву-объект:</span></span><br><span class="line">Vue.directive(<span class="string">'my-directive'</span>, &#123;</span><br><span class="line">  bind: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  inserted: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  componentUpdated: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  unbind: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// региструем директиву в виде простой функции:</span></span><br><span class="line">Vue.directive(<span class="string">'my-directive'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Vue будет вызывать эту функцию как `bind` и `update`</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// получаем определение директивы, если она зарегистрирована:</span></span><br><span class="line"><span class="keyword">var</span> myDirective = Vue.directive(<span class="string">'my-directive'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// регистрируем директиву-объект:</span></span><br><span class="line">Vue.directive(<span class="string">'my-directive'</span>, &#123;</span><br><span class="line">  bind: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  inserted: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  update: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  componentUpdated: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">  unbind: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// регистрируем директиву в виде простой функции:</span></span><br><span class="line">Vue.directive(<span class="string">'my-directive'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Vue будет вызывать эту функцию как `bind` и `update`</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// получаем определение директивы, если она зарегистрирована:</span></span><br><span class="line"><span class="keyword">var</span> myDirective = Vue.directive(<span class="string">'my-directive'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>См. также:</strong> <a href="../guide/custom-directive.html">Пользовательские директивы</a></p>
 </li>
@@ -933,7 +935,7 @@
 </li>
 <li><p><strong>Подробности:</strong></p>
 <p>Позволяет декларативно наследоваться от другого компонента (который может быть либо простым объектом, либо конструктором), не используя <code>Vue.extend</code>. Главным образом предназначено для облегчения наследования между компонентами, определёнными в одном файле.</p>
-<p>Эта функциональность близка к <code>mixins</code>, с той разницей, что собственные опции компонента приоритетнее опций компонента, от которого происходит наследование.</p>
+<p>Эта функциональность похожа на <code>mixins</code>.</p>
 </li>
 <li><p><strong>Пример:</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> CompA = &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// наследуем от CompA, не вызывая `Vue.extend`:</span></span><br><span class="line"><span class="keyword">var</span> CompB = &#123;</span><br><span class="line">  extends: CompA,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -954,7 +956,19 @@
 
 <p>Эта пара опций используется вместе, чтобы позволить компоненту-родителю внедрять зависимости во всех его компонентах-потомках, независимо от того, насколько глубоко в иерархии они находятся, пока они находятся в той же самой родительской цепочке. Если вы знакомы с React, это очень похоже на функцию контекста.</p>
 <p>Опция <code>provide</code> должна быть объектом или функцией, возвращающей объект. Этот объект содержит свойства, которые будут доступны для внедрения в их потомках. Вы можете использовать ES2015 Symbols в качестве ключей этого объекта, но только в окружениях, которые нативно поддерживают <code>Symbol</code> и <code>Reflect.ownKeys</code>.</p>
-<p>Опция <code>inject</code> должна быть массивом строк или объектом, где ключи стоят для локального связывания имени, а значение является ключом (string или Symbol) для поиска в доступных инъекциях.</p>
+<p>Опция <code>inject</code> должна быть:</p>
+<ul>
+<li>массивом строк, или</li>
+<li>объектом, где ключи стоят для локального связывания имени, а значение является:<ul>
+<li>ключом (string или Symbol) для поиска в доступных инъекциях, или</li>
+<li>объектом, где:<ul>
+<li>свойство <code>name</code> является ключом (string или Symbol) для поиска в доступных инъекциях, и</li>
+<li>свойство <code>default</code> используется как резервное значение</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <blockquote>
 <p>Примечание: привязки <code>provide</code> и <code>inject</code> НЕ реактивны. Это сделано намеренно. Тем не менее, если вы передаёте вниз отслеживаемый объект, свойства на этом объекте остаются реактивными.</p>
 </blockquote>

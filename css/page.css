@@ -1358,15 +1358,18 @@ ul.demo li {
 }
 .content h3 {
   margin: 52px 0 1.2em;
+  line-height: 1.2;
   position: relative;
 }
-.content h3:after {
+.content h3 > a:before {
   content: "#";
   color: #42b983;
   position: absolute;
   left: -0.7em;
-  bottom: -2px;
+  margin-top: -0.05em;
+  padding-right: 0.5em;
   font-size: 1.2em;
+  line-height: 1;
   font-weight: bold;
 }
 .content figure {
