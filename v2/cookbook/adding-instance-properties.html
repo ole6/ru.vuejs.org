@@ -98,6 +98,7 @@
       <li><a href="/v2/api/" class="nav-link">API</a></li>
       <li><a href="/v2/style-guide/" class="nav-link">Рекомендации</a></li>
       <li><a href="/v2/examples/" class="nav-link">Примеры</a></li>
+      <li><a href="/v2/cookbook/" class="nav-link current">Cookbook</a></li>
     </ul></li>
   </ul>
 </li>
@@ -192,6 +193,7 @@
       <li><a href="/v2/api/" class="nav-link">API</a></li>
       <li><a href="/v2/style-guide/" class="nav-link">Рекомендации</a></li>
       <li><a href="/v2/examples/" class="nav-link">Примеры</a></li>
+      <li><a href="/v2/cookbook/" class="nav-link current">Cookbook</a></li>
     </ul></li>
   </ul>
 </li>
@@ -293,17 +295,12 @@
 
             <h2>
                 
-                
+                Cookbook<sup class="beta">beta</sup>
                 
             </h2>
             <ul class="menu-root">
     
         
-        
-        
-            
-            <!-- Move cookbook sections here once they have -->
-            <!-- at least one recipe -->
         
         <li>
             <a href="/v2/cookbook/index.html" class="sidebar-link">Introduction</a>
@@ -311,21 +308,11 @@
     
         
         
-        
-            
-            <!-- Move cookbook sections here once they have -->
-            <!-- at least one recipe -->
-        
         <li>
-            <a href="/v2/cookbook/cookbook-contributions.html" class="sidebar-link">Cookbook Contributions</a>
+            <a href="/v2/cookbook/adding-instance-properties.html" class="sidebar-link current">Adding Instance Properties</a>
         </li>
     
         
-        
-        
-            
-            <!-- Move cookbook sections here once they have -->
-            <!-- at least one recipe -->
         
         <li>
             <a href="/v2/cookbook/form-validation.html" class="sidebar-link">Form Validation</a>
@@ -333,43 +320,11 @@
     
         
         
-        
-            
-            <!-- Move cookbook sections here once they have -->
-            <!-- at least one recipe -->
-        
-        <li>
-            <a href="/v2/cookbook/adding-instance-properties.html" class="sidebar-link current">Adding Instance Properties</a>
-        </li>
-    
-        
-        
-        
-            
-            <!-- Move cookbook sections here once they have -->
-            <!-- at least one recipe -->
-        
-        <li>
-            <a href="/v2/cookbook/unit-testing-vue-components.html" class="sidebar-link">Unit Testing Vue Components</a>
-        </li>
-    
-        
-        
-        
-            
-            <!-- Move cookbook sections here once they have -->
-            <!-- at least one recipe -->
-        
         <li>
             <a href="/v2/cookbook/editable-svg-icons.html" class="sidebar-link">Editable SVG Icon Systems</a>
         </li>
     
         
-        
-        
-            
-            <!-- Move cookbook sections here once they have -->
-            <!-- at least one recipe -->
         
         <li>
             <a href="/v2/cookbook/serverless-blog.html" class="sidebar-link">Create a CMS-Powered Blog</a>
@@ -377,23 +332,21 @@
     
         
         
+        <li>
+            <a href="/v2/cookbook/unit-testing-vue-components.html" class="sidebar-link">Unit Testing Vue Components</a>
+        </li>
+    
         
-            
-            <!-- Move cookbook sections here once they have -->
-            <!-- at least one recipe -->
+        
+        <li>
+            <a href="/v2/cookbook/creating-custom-scroll-directives.html" class="sidebar-link">Creating Custom Scroll Directives</a>
+        </li>
+    
+        
         
         <li>
             <a href="/v2/cookbook/using-axios-to-consume-apis.html" class="sidebar-link">Using Axios to Consume APIs</a>
         </li>
-    
-    
-        <li><h3>Components</h3></li>
-        <li><h4>Form Inputs</h4></li>
-        <li><h4>3rd-Party Integrations</h4></li>
-        <li><h3>Transitions</h3></li>
-        <li><h3>Directives</h3></li>
-        <li><h3>Vue Router</h3></li>
-        <li><h3>Vuex</h3></li>
     
 </ul>
 
@@ -440,7 +393,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.prototype.appName = <span class="string">'My App'</span></span><br></pre></td></tr></table></figure>
 <p>Then what would you expect to be logged below?</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    <span class="comment">// Uh oh - appName is *also* the name of the</span></span><br><span class="line">    <span class="comment">// instance property we defined!</span></span><br><span class="line">    appName: <span class="string">'The name of some other app'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  beforeCreate: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.appName)</span><br><span class="line">  &#125;,</span><br><span class="line">  created: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.appName)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>It would be <code>&quot;The name of some other app&quot;</code>, then <code>&quot;My App&quot;</code>, because <code>this.appName</code> is overwritten (<a href="https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md" target="_blank" rel="noopener">sort of</a>) by <code>data</code> when the instance is created. We scope instance properties with <code>$</code> to avoid this. You can even use your own convention if you’d like, such as <code>$_appName</code> or <code>ΩappName</code>, to prevent even conflicts with plugins or future features.</p>
+<p>It would be <code>&quot;My App&quot;</code>, then <code>&quot;The name of some other app&quot;</code>, because <code>this.appName</code> is overwritten (<a href="https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md" target="_blank" rel="noopener">sort of</a>) by <code>data</code> when the instance is created. We scope instance properties with <code>$</code> to avoid this. You can even use your own convention if you’d like, such as <code>$_appName</code> or <code>ΩappName</code>, to prevent even conflicts with plugins or future features.</p>
 <h2 id="Real-World-Example-Replacing-Vue-Resource-with-Axios"><a href="#Real-World-Example-Replacing-Vue-Resource-with-Axios" class="headerlink" title="Real-World Example: Replacing Vue Resource with Axios"></a>Real-World Example: Replacing Vue Resource with Axios</h2><p>Let’s say you’re replacing the <a href="https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4" target="_blank" rel="noopener">now-retired Vue Resource</a>. You really enjoyed accessing request methods through <code>this.$http</code> and you want to do the same thing with Axios instead.</p>
 <p>All you have to do is include axios in your project:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"user in users"</span>&gt;</span>&#123;&#123; user.name &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
